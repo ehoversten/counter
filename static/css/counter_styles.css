@@ -1,0 +1,34 @@
+
+
+.wrapper {
+
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  background-color: lightgrey;
+}
+
+h1 {
+  color: black;
+}
+
+.container, .return_val {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 500px;
+}
+
+button {
+  margin-left: 7px;
+}
+
+green.button {
+  background-color: green;
+}
