@@ -17,12 +17,13 @@ app.secret_key = '42'
 def index():
     if 'count' not in session:
         session['count'] = 0
-    # session['count'] = str(int(session['count']) + 1)
-    session['count'] += 1
+    else:
+        session['count'] += 1
 
+    print(type(session['count']))
     return render_template("index.html", count=session['count'])
 
-@app.route('/destroy', methods=['POST'])
+@app.route('/destroy', methods=["POST"])
 def destroy():
     session.clear()
     return redirect('/')
@@ -32,6 +33,12 @@ def add():
     session['count'] += 1
     return redirect('/')
 
+@app.route('/')
+def resetCount():
+    session.clear()
+    return redirect('/')
+
 
 if __name__=="__main__":
+
     app.run(debug=True)
